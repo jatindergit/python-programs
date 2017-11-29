@@ -1,0 +1,76 @@
+This is better to share your code with the world so that everyone can access, use and start plaudit your code. In Python, you can do this using Python modules. Python provides a very standardized way to write moudels and share within the community. We have gone through many aricles regarding write a Python module that are much bigger, therefore we have tried to expain the whole process in very short and easily understandable. We have also add the command line images to see your module being build and install. Before we start, lets see the definition of module.
+
+<h2>Definition</h2>
+Python modules are used to organize your Python code logically. A module can have variables, functions and classess. You can simply turn your grouping functions into a common file and that file can be used as module. To use the module functions or code, you just need to import that specific module into your file.
+
+
+<h2>Write Python Module</h2>
+To understand the complete process, lets take an example of simple arithmetic module. This module has four functions to perform arithmetic operations. Just create a arithmetic.py file with the following code:
+<pre>
+"""
+This is arithmetic module that is used to perform add, subsctract, multiply and division.
+arithmetic module is just created to understand the Python modules
+"""
+
+def add(a,b):
+	"""This is add function that is used to add two numbers. Numbers will be passed when call this function"""
+	return a+b
+	
+def subtract(a,b):
+	"""This is subtract function that is used to subtract numbers. Numbers will be passed when call this function"""
+	return a-b
+	
+def multiply(a,b):
+	"""This will be used to multiply two numbers and return result"""
+	return a*b
+
+def divide(a,b):
+	"""This will be used to divide numbers"""
+	return a/b	
+</pre>
+
+<b>Important: One thing to note here that we have commented this module very well so that everyone can understand the module code within no time. Comments can be done in Python using the triple(""") quotes.</b>
+
+<h2>Python Module Distribution</h2>
+Now you have created your arithmetic Python module but before you share it you need to prepare a distribution. A distribution is a folder that you can upload and share within the community world wide. There are following four steps to distribute your module:
+
+<h3>1. Start by creating a directory for your module</h3>
+To make the stuff simple, first create a folder with name arithmethic and copy your arithmetic.py module file into this folder.
+
+<h3>2. Create setup.py file in your new directory</h3>
+This is a standard, that you have to create a setup.py file that uses the Python utilities and save the metadata about the module. Open setup.py file and copy the following code:
+<pre>
+from distutils.core import setup
+setup(
+	name = 'arithmetic',
+	version = '1.0.0',
+	py_modules = ['arithmetic'],
+	author = 'trickntip.com',
+	author_email = 'trickntip.com@email.com',
+	url = 'http://www.trickntip.com',
+	description = 'This is simple module to perform arithmetic operations.',
+)
+</pre>
+
+<h3>3. Build a distribution file</h3>
+Now your module's code is in arithmetic.py file and setup.py file contains metadata about module. Now, let's build a distribution file. The distribution utilities in Python include all the features to build a distribution. Just open your terimal from inside of arithmetic folder and type a command: python3 setup.py sdist
+
+
+
+<h3>4. Install this distribution into local copy of Python</h3>
+Your distribution is created, now its time to install this distribution in your local copy of Python. Please type a commend: sudo python3 setup.py install
+
+
+<h2>Import Python Module</h2>
+Now you module is built and installed into the local Python. Let's see how you can use your module in any of your file. To use any module in Python we write import keyword, here we have to do the same. Please see the following example:
+<pre>
+import arithmetic
+
+print(arithmetic.add(10,20))
+
+</pre>
+
+Its important to write the module name when call any function of the module otherwise NameError will be displayed.
+
+<h2>Summary</h2>
+Congratulations! you have successfully wrote you own Python Module, you have tested your module and its working. Now its time to share your module within the Python community. You can see all the instructions to <a href="trickntip.com">Upload Your Python Module To PyPI</a> and tell everyone that you have built a Python module. Keep rocking!!!
